@@ -208,3 +208,39 @@
   208  cd ..
   209  ls
   210  history > Day2_History.txt
+  211  cd ..
+  212  ls
+  213  netstat 
+  214  netstat -tulnp
+  215  git add . ; git commit -m "Docker"; git push 
+  216  ls
+  217  cd 03-Docker/
+  218  ls
+  219  cd Dockerfile/
+  220  ls
+  221  mkdir tomcat
+  222  ls
+  223  cd tomcat/
+  224  s
+  225  ls
+  226  vim Dockerfile
+  227  ls
+  228  cp -rf /root/.jenkins/workspace/Petclinic-Project-FreeStyle-Job/02-Jenkins/Code/petclinic/target/petclinic.war . 
+  229  ls
+  230  docker build -t  tomcat-petclinic:v1 . 
+  231  docker images 
+  232  docker ps 
+  233  docker run -d -p 38081:8080 --name petclinic-node tomcat-petclinic:v1 
+  234  docker ps 
+  235  ls
+  236  > petclinic.war 
+  237  ls
+  238  cd ..
+  239  ls
+  240  cd ../
+  241  ls
+  242  cd ..
+  243  ls
+  244  cd 03-Docker/
+  245  ls
+  246  history > Day2_History.txt 
