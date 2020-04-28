@@ -244,3 +244,102 @@
   244  cd 03-Docker/
   245  ls
   246  history > Day2_History.txt 
+  247  ls
+  248  cd /opt/tomcat/
+  249  ls
+  250  cd webapps/
+  251  ls
+  252  cd - 
+  253  ls
+  254  cd ..
+  255  cd 
+  256  docker ps 
+  257  ls
+  258  cd mindtree
+  259  ls
+  260  cd mindtree-devops-27April2020/
+  261  ls
+  262  cd 03-Docker/
+  263  ls
+  264  cat Day2_History.txt 
+  265  ls
+  266  cd Dockerfile/
+  267  ls
+  268  cd tomcat/
+  269  ls
+  270  docker images 
+  271  docker run -it  tomcat:8.0 /bin/bash
+  272  ls
+  273  docker run -it  tomcat:8.0 
+  274  ls
+  275  file petclinic.war 
+  276  ls
+  277  cd ..
+  278  ls
+  279  cd ..
+  280  ls
+  281  cd ..
+  282  l
+  283  git add . ; git commit -m "Tomcat"; git push 
+  284  docker-compose version 
+  285  ls
+  286  cd 03-Docker/
+  287  ls
+  288  mkdir Docker-Compose
+  289  ls
+  290  cd Docker-Compose/
+  291  ls
+  292  cp -rf ../Dockerfile/tomcat petclinic
+  293  ls
+  294  cd petclinic/
+  295  ls
+  296  cp -rf /root/.jenkins/workspace/Petclinic-Project-FreeStyle-Job/02-Jenkins/Code/petclinic/target/petclinic.war . 
+  297  l
+  298  ls -ltr 
+  299  ls
+  300  vim docker-compose.yaml
+  301  ls
+  302  docker ps 
+  303  docker ps -a
+  304  docker ps -aq
+  305  docker kill $(docker ps -aq)
+  306  docker ps 
+  307  ls
+  308  docker-compose up -d 
+  309  docker ps 
+  310  docker-compose ps 
+  311  vim docker-compose.yaml 
+  312  docker-compose up -d --build
+  313  docker-compose stop 
+  314  docker-compose rm 
+  315  docker ps 
+  316  docker images 
+  317  docker-compose up -d --build
+  318  ls
+  319  cd ..
+  320  ls
+  321  cd ..
+  322  ls
+  323  cd Docker-Compose/
+  324  ls
+  325  cp -rf ../../../../mindtree-devops-30Jan2020/02-Docker/DockerCompose/wordpress-3-tier-app . 
+  326  ls
+  327  cd wordpress-3-tier-app/
+  328  ls
+  329  vim docker-compose.yml 
+  330  docker-compose up -d 
+  331  docker-compose ps 
+  332  docker-compose kill 
+  333  docker-compose rm 
+  334  ls
+  335  rm -rf db-data logs/ wordpress 
+  336  ls
+  337  cd nginx/
+  338  ls
+  339  cd ..
+  340  ls
+  341  cd ..
+  342  ls
+  343  cd ..
+  344  ls
+  345  history > Day2_History.txt 
