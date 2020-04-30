@@ -1,9 +1,0 @@
-    1  echo "Setting Up Jenkins"
-    2  apt-get update; apt-get install default-jdk -y 
-    3  java -version 
-    4  wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war 
-    5  ls
-    6  mv jenkins.war /root/
-    7  ls
-    8  ip addr 
-    9  java -jar jenkins.war --httpPort=9090 & 
