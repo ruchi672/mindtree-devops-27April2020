@@ -1,0 +1,34 @@
+---
+
+- hosts: web
+  name: My Web Group Apache Deployment
+  become: yes
+  vars: 
+    doc_root: "/var/www/html"
+    username: "Amit Vashist"
+ 
+  tasks: 
+  - name: Install Apache2 Packages
+    apt: name=apache2 state=present
+    when: ansible_os_family == "Debian"
+
+  - name: Install HTTPd Packages
+    yum: name=httpd state=present
+    when: ansible_os_family == "RedHat"
+  
+  - name: Bring up Apache Service 
+    service: name=apache2 state=started
+
+  - name: Deploy my custom Index Web page
+    copy: src=files/index.html  dest={{doc_root}}/index.html
+
+  - name: Deploy my custom Info Web page template
+    template: src=templates/info.j2  dest={{doc_root}}/info.html
+
+
+- hosts: db
+  name: My DB Group Apache Deployment
+  sudo: yes 
+  tasks: 
+  - name: Install Apache2 Packages
+    apt: name=apache2 state=present
