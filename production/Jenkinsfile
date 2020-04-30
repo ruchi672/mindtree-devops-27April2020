@@ -34,5 +34,14 @@ node {
 
 
  }
+	
+def project_terra="terrafrom-code/04-Tomcat-Deploy"
+dir(project_terra) {
+   stage('Prod Deployment on AWS'){
+   sh label: 'terraform', script: '/bin/terraform  init'
+   sh label: 'terraform', script: '/bin/terraform  apply -input=false -auto-approve'
+   }
+}
+	
 
 }
