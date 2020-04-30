@@ -1,5 +1,9 @@
 node {
-  
+// Get Artifactory server instance, defined in the Artifactory Plugin administration page.
+    def server = Artifactory.server "01"
+    def buildInfo = Artifactory.newBuildInfo() 
+
+ 
   stage('GIT CheckOut') {
     git branch: 'development ', url: 'https://github.com/amitvashisttech/mindtree-devops-27April2020.git'
   }
@@ -23,6 +27,29 @@ node {
   stage('Maven-Package') {
     sh label: '', script: 'mvn package'
   }
+   
+  stage('SonarQube analysis' ) {
+    withSonarQubeEnv('Sonar') { 
+        sh 'mvn sonar:sonar'
+    }     
+  }
+
+  stage('Build Managment') {
+      def uploadSpec = """{
+	 "files": [
+	{
+	"pattern": "**/*.war",
+	"target": "libs-snapshot"
+        }
+	]
+	}"""
+	server.upload spec: uploadSpec
+    }
+
+
+    stage('Publish build info') {
+    server.publishBuildInfo buildInfo
+    }
 
   stage('Stage Deployment- Env Docker') {
     sh label: '', script: 'docker-compose up -d --build'
