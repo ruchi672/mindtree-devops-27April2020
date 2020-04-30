@@ -1,0 +1,38 @@
+node {
+// Get Artifactory server instance, defined in the Artifactory Plugin administration page.
+    def server = Artifactory.server "01"
+    def buildInfo = Artifactory.newBuildInfo()
+
+
+  stage('GIT CheckOut') {
+    git branch: 'production', url: 'https://github.com/amitvashisttech/mindtree-devops-27April2020.git'
+  }
+
+  def project_path = "ansible-code/05-Tomcat"
+
+  dir(project_path) {
+   stage('Build Managment') {
+       def downloadSpec = """{
+         "files": [
+             {
+                "pattern": "libs-snapshot/*.war",
+                "target": "files/"
+             }
+			]
+        }"""
+        server.download spec: downloadSpec
+
+
+}
+ stage('Geting Ready For Ansible') {
+  sh label: 'Jenkins', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > files/jenkins.html"
+}
+
+ stage('Petclinic Ansible Deployment - PROD') {
+            sh label: '', script: 'ansible-playbook playbook.yaml'
+        }
+
+
+ }
+
+}
