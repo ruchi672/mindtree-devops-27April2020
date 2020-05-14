@@ -5,7 +5,7 @@ node {
 
 
   stage('GIT CheckOut') {
-    git branch: 'production', url: 'https://github.com/amitvashisttech/mindtree-devops-27April2020.git'
+    git branch: 'production', url: 'https://github.com/ruchi672/mindtree-devops-27April2020.git'
   }
 
   def project_path = "ansible-code/05-Tomcat"
@@ -15,7 +15,7 @@ node {
        def downloadSpec = """{
          "files": [
              {
-                "pattern": "libs-snapshot/*.war",
+                "pattern": "petclinic/*.war",
                 "target": "files/"
              }
 			]
