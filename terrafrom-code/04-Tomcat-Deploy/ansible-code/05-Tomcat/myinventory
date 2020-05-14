@@ -1,34 +1,21 @@
-172.42.42.201
-172.42.42.202
-web1
-
 [web]
-web1
-web2
+52.251.33.100
 
-[petclinic]
-web2
-web1
 
 [db]
-web2
+52.251.33.100
 
-[uat]
-web1
-web2
-172.42.42.20[3:9]
-
-
-
-[python3]
-web1
-172.42.42.203
+[petclinic]
+52.251.33.100
 
 [dc:children]
 web
+db
 petclinic
 
 
 [dc:vars]
-ansible_ssh_user=vagrant
-ansible_ssh_pass=vagrant
+
+ansible_ssh_user="root"
+
+ansible_ssh_pass="root"
