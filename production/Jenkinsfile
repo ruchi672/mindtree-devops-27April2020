@@ -29,7 +29,7 @@ node {
 }
 
  stage('Petclinic Ansible Deployment - PROD') {
-            sh label: '', script: 'ansible-playbook playbook.yaml'
+            sh label: '', script: 'sudo ansible-playbook playbook.yaml'
         }
 
 
