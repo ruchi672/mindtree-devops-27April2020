@@ -3,7 +3,7 @@ variable "nvkey" {
 }
 
 variable "pvt_key" {
-  default = "/root/.ssh/nvkey.pem"
+  default = "/root/.ssh/id_rsa"
 }
 
 variable "us-east-zones" {
