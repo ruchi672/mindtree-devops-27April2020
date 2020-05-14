@@ -29,7 +29,7 @@ node {
   }
    
   stage('SonarQube analysis' ) {
-    withSonarQubeEnv('Sonar') { 
+    withSonarQubeEnv('sonar') { 
         sh 'mvn sonar:sonar'
     }     
   }
