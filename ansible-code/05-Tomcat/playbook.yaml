@@ -1,11 +1,11 @@
 ---
 
-- hosts: web
+- hosts: all
   name: My Web Group Apache Deployment
   become: yes
   vars: 
     doc_root: "/var/www/html"
-    username: "Amit Vashist"
+    username: "Ruchi Bhadani"
     doc_tomcat: "/opt/SP/apps"
     doc_tomcat_webapp: "/opt/SP/apps/tomcat/webapps/webapp"
  
